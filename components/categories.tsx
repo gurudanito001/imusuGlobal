@@ -1,4 +1,5 @@
 import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Categories() {
   return (
@@ -11,9 +12,9 @@ export default function Categories() {
             Explore tailored collections designed to support specific facets of your holistic well-being.
           </p>
         </div>
-        <button className="hidden md:flex items-center gap-2 text-[#1a332a] font-medium hover:gap-3 transition-all">
+        <Link href="/products" className="hidden md:flex items-center gap-2 text-[#1a332a] font-medium hover:gap-3 transition-all">
           View All Categories <ArrowRight size={18} />
-        </button>
+        </Link>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 h-[600px]">

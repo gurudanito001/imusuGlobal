@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react';
 import { 
   CheckCircle2, 
@@ -8,6 +10,7 @@ import {
   Banknote, 
   Award 
 } from 'lucide-react';
+import { useRegion } from '../context/regionContext';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
 
@@ -70,6 +73,8 @@ const products = [
 ];
 
 export default function ProductCatalog() {
+  const { regionName } = useRegion();
+
   return (
     <main className="min-h-screen flex flex-col bg-[#F4F6F5]">
       <Navbar />
@@ -106,7 +111,7 @@ export default function ProductCatalog() {
             <div>
               <label className="block text-xs font-bold text-[#333333] mb-3 uppercase tracking-wide">Show available in</label>
               <button className="w-full flex items-center justify-between bg-white border border-gray-200 text-[#333333] px-4 py-3 rounded-lg shadow-sm hover:border-[#1B4332]/30 transition-colors font-medium text-sm">
-                United States
+                {regionName}
                 <ChevronDown size={16} className="text-gray-400" />
               </button>
             </div>
@@ -119,7 +124,7 @@ export default function ProductCatalog() {
           <div className="mb-10">
             <h1 className="text-5xl font-serif text-[#1B4332] mb-4">Discovery</h1>
             <p className="text-gray-600 text-[15px]">
-              Curated health and wellness selections currently available in <span className="font-bold text-gray-900">United States</span>.
+              Curated health and wellness selections currently available in <span className="font-bold text-gray-900">{regionName}</span>.
             </p>
           </div>
 

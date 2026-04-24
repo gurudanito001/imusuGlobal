@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { X, Search, MapPin } from 'lucide-react';
+import { useRegion } from '@/app/context/regionContext';
 
 const regions = [
   { code: 'US', name: 'United States', currency: 'USD' },
@@ -18,18 +19,12 @@ const languages = [
   { code: 'FR', name: 'Français' },
 ];
 
-
-export default function RegionLanguageModal({ 
-  isOpen, 
-  onClose,
-  onSave 
-}: { 
-  isOpen: boolean; 
-  onClose: () => void;
-  onSave: (label: string) => void; 
-}) {
+export default function RegionLanguageModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void; }) {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedLang, setSelectedLang] = useState('EN');
+  
+  // Connect to the global state
+  const { setRegionLabel, setRegionName } = useRegion();
 
   if (!isOpen) return null;
 
@@ -37,16 +32,16 @@ export default function RegionLanguageModal({
     region.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  const handleSavePreferences = (regionCode: string) => {
-    // This sends the selected language and region back to the Navbar
-    onSave(`${selectedLang} | ${regionCode}`);
+  const handleSavePreferences = (regionCode: string, regionName: string) => {
+    // Save both the short label (for Navbar) and full name (for Catalog) globally!
+    setRegionLabel(`${selectedLang} | ${regionCode}`);
+    setRegionName(regionName);
     onClose();
   };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm p-4">
       <div className="bg-white rounded-xl shadow-2xl w-full max-w-lg overflow-hidden flex flex-col max-h-[85vh]">
-        
         {/* Header */}
         <div className="px-6 py-5 border-b border-gray-100 flex justify-between items-center bg-[#faf9f6]">
           <div>
@@ -99,7 +94,8 @@ export default function RegionLanguageModal({
               {filteredRegions.map((region) => (
                 <button
                   key={region.code}
-                  onClick={() => handleSavePreferences(region.code)}
+                  // Pass the full name as the second argument
+                  onClick={() => handleSavePreferences(region.code, region.name)}
                   className="flex items-center justify-between w-full p-3 hover:bg-[#f4cdb3]/20 rounded-lg transition-colors group text-left"
                 >
                   <div className="flex items-center gap-3">
@@ -116,7 +112,6 @@ export default function RegionLanguageModal({
             </div>
           </div>
         </div>
-
       </div>
     </div>
   );

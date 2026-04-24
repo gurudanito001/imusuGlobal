@@ -17,15 +17,12 @@ export default function NewCategoryPage() {
           <Settings size={20} />
         </button>
         <div className="w-8 h-8 rounded-full border border-gray-200 overflow-hidden cursor-pointer shadow-sm">
-          {/* Placeholder for the suited avatar shown in the screenshot */}
           <img src="https://i.pravatar.cc/150?img=11" alt="Admin" className="w-full h-full object-cover" />
         </div>
       </header>
 
-      {/* Main Content - Removed mx-auto for flush left alignment */}
+      {/* Main Content*/}
       <div className="px-10 pb-12 w-full max-w-6xl">
-        
-        {/* Breadcrumbs & Header */}
         <div className="mb-8">
           <div className="flex items-center gap-2 text-md text-gray-500 mb-3">
             <Link href="/admin/categories" className="hover:text-gray-900 transition-colors">
@@ -91,7 +88,7 @@ export default function NewCategoryPage() {
                 {/* Checkbox */}
                 <label className="flex items-center gap-3 cursor-pointer group">
                   <div className="w-5 h-5 rounded border border-gray-300 flex items-center justify-center bg-white group-hover:border-[#0F3B21] transition-colors">
-                    {/* Empty for unchecked, normally would hold a checkmark */}
+  
                   </div>
                   <span className="text-[14px] text-gray-700 font-medium">
                     Feature on Sanctuary Homepage

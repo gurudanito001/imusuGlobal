@@ -11,7 +11,7 @@ export default function AddProductPage() {
       {/* Header Section */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-4">
         <div>
-          {/* Breadcrumbs */}
+          
           <div className="flex items-center gap-2 text-md font-medium text-gray-500 mb-2">
             <Link href="/admin/products" className="hover:text-gray-900 transition-colors">Products</Link>
             <ChevronRight size={14} />

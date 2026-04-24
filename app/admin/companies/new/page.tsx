@@ -8,7 +8,6 @@ export default function RegisterPartnerPage() {
   return (
     <div className="flex flex-col h-full w-full">
       
-      {/* Clean "Form Page" Navbar - Kept intact */}
       <header className="h-16 border-b border-gray-100 flex items-center justify-between px-10 mb-8 shrink-0 bg-[#F9FAFB] shadow-xs">
         <div className="relative w-72">
                   <Search className="w-4 h-4 absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
@@ -36,7 +35,7 @@ export default function RegisterPartnerPage() {
         </div>
       </header>
 
-      {/* Main Content Area - Removed mx-auto for flush left alignment */}
+      {/* Main Content Area */}
       <div className="px-10 pb-12 w-full max-w-4xl">
         
         {/* Header Section */}

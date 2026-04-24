@@ -38,7 +38,6 @@ export default function CompaniesDirectory() {
   return (
     <div className="flex flex-col h-full w-full">
       
-      {/* Standard Page Navbar - Updated to px-10 and added shrink-0 to prevent flex issues */}
       <header className="h-16 border-b border-gray-100 flex items-center justify-between px-10 mb-8 shrink-0 bg-[#F9FAFB] shadow-xs">
         <div className="flex items-center gap-8">
           <h2 className="font-semibold text-gray-800">The Editorial Wellness Collective</h2>
@@ -62,7 +61,7 @@ export default function CompaniesDirectory() {
         </div>
       </header>
 
-      {/* Main Content Area - Removed mx-auto for flush left alignment */}
+      {/* Main Content Area*/}
       <div className="px-10 pb-12 w-full max-w-[1400px]">
         
         {/* Header Section */}

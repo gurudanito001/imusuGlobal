@@ -87,7 +87,7 @@ export default function AdminProductsDashboard() {
           </div>
         </div>
 
-        {/* Main Content Grid (Table + Sidebar) */}
+        {/* Main Content Grid*/}
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-6">
           
           {/* Left: Inventory Table */}
@@ -156,7 +156,7 @@ export default function AdminProductsDashboard() {
   );
 }
 
-// --- Internal Helper Components ---
+
 
 function MetricCard({ title, value, icon, trend }: { title: string, value: string, icon: React.ReactNode, trend: string }) {
   const isPositive = trend.includes('+');

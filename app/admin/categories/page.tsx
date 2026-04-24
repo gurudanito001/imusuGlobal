@@ -4,7 +4,7 @@ import React from 'react';
 import { Plus, Bell, User } from 'lucide-react';
 import Link from 'next/link';
 
-// Mock data based on your screenshots
+
 const CATEGORIES = [
   {
     id: 1,
@@ -60,7 +60,7 @@ export default function CategoriesPage() {
         </div>
       </header>
 
-      {/* Main Content - Removed mx-auto, matching px-10 padding with header */}
+      {/* Main Content */}
       <div className="px-10 w-full max-w-7xl pb-12">
         
         {/* Page Header Area */}
@@ -80,10 +80,10 @@ export default function CategoriesPage() {
           </Link>
         </div>
 
-        {/* Main Content Container (The light gray rounded area) */}
+        {/* Main Content Container*/}
         <div className="bg-[#E6E6E6] rounded-[32px] p-8 min-h-[500px]">
           
-          {/* Responsive Grid for Cards */}
+          
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {CATEGORIES.map((category) => (
               <div 
